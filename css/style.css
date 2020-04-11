@@ -1,0 +1,31 @@
+body {
+    background: #0F2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.text-left {
+    text-align: left;
+}
+
+.font-styl {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+.form-head {
+    text-align: center;
+    width: 450px;
+    background-color: #2C5364;
+}
+
+.logout:hover{
+    -webkit-transform: scale(1.1);
+}
