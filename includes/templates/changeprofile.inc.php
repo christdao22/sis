@@ -1,17 +1,17 @@
 <link rel="stylesheet" href="../css/style.css" type="text/css" />
-<title>Upload Profile Pic</title>
+<title>Change Profile Pic</title>
 </head>
-
-<body class="jumbotron jumbotron-fluid ">
+<?php  include '../utilities/dbconnect.util.php';  ?>
+<body class="jumbotron jumbotron-fluid "> 
     <div class="container p-0 form-head">
         <div class="card-header font-styl p-3" style="background-color:#0F2027; margin:0;">
-            <h4 class="m-0" style="color:white">Upload Profile Picture</h4>
+            <h4 class="m-0" style="color:white">Change Profile Picture</h4>
         </div>
 
         <div class="card-body" style="color:white; margin:auto;">
             <?php 
-                include('../utilities/image_validation.util.php');
-                include('../transactions/upload.val.php'); 
+                include '../utilities/image_validation.util.php';
+                include '../transactions/upload.val.php'; 
             ?>
             
             <?php   
@@ -36,8 +36,8 @@
                     <button class="btn btn-primary form-control" style=" font-weight:bold" type="submit">Upload</button>
                 </div>
                 <div class="form-group">
-                    <button class="btn w-100" name="skip" type='submit'
-                        style="background-color:#f77042; color:white; font-weight:bold">Skip</button>
+                    <button class="btn w-100" name="cancel" type='submit'
+                        style="background-color:#f77042; color:white; font-weight:bold">Cancel</button>
                 </div>
             </form>
 

@@ -13,10 +13,9 @@ function validateImageType($pic_type)
     return in_array(end($strArray), $allowed) ? false : true;
 }
 
-function upload($name, $tmp)
+function upload($name, $tmp, $destination)
 {
     $new_name=rename('$name');
     $newfolder=mkdir();
-    $destination = "upload/" . basename($name);
     move_uploaded_file($tmp, $destination);
 }

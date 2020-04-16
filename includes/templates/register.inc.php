@@ -1,12 +1,13 @@
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
 <title>Register</title>
 </head>
 
 
-
-
-<?php include 'utilities/validation.util.php'; include 'utilities/dbquery.util.php'; include 'transactions/register.val.php'; ?>
-
-
+<?php 
+    include '../utilities/validation.util.php'; 
+    include '../utilities/dbquery.util.php'; 
+    include '../transactions/register.val.php'; 
+?>
 
 <body class="jumbotron jumbotron-fluid ">
     <div class="container p-0 form-head">
@@ -49,7 +50,7 @@
 
             </form>
             <div class="form-group" style=" text-align:center;">
-                <a class="btn w-100" href="index.php"
+                <a class="btn w-100" href="../"
                     style="width:150px; background-color:#f77042; color:white; font-weight:bold">Cancel</a>
             </div>
         </div>

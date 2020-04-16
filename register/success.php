@@ -1,5 +1,5 @@
-<?php include('includes/templates/header.inc.php');?>
-<link rel="stylesheet" href="css/style.css">
+<?php include('../includes/templates/header.inc.php');?>
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
 <title>Success</title>
 </head>
 
@@ -19,9 +19,9 @@
                 <strong class="">You have succesfully registered!</strong>
             </div>
             <div class=" m-3 " style=" text-align:center; margin:auto; ">
-                <a class="btn" href="index.php?login"
+                <a class="btn" href="../"
                     style="width:150px; background-color:#f77042; color:white; font-weight:bold;">Login</a>
             </div>
         </div>
     </div>
-    <?php include('includes/templates/footer.inc.php');?>
+    <?php include('../includes/templates/footer.inc.php');?>

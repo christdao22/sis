@@ -1,14 +1,15 @@
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
 <title>Create account</title>
 </head>
- 
+
 <?php  
-include 'utilities/dbconnect.util.php'; 
-include 'utilities/validation.util.php'; 
-include 'utilities/dbquery.util.php';
-include 'transactions/form.val.php';
+include '../utilities/dbconnect.util.php'; 
+include '../utilities/validation.util.php'; 
+include '../utilities/dbquery.util.php';
+include '../transactions/form.val.php';
 ?>
 
-<body class="jumbotron jumbotron-fluid "> 
+<body class="jumbotron jumbotron-fluid ">
     <div class="container p-0 col-md-5" style="background-color:#2C5364;  text-align:center;">
         <div class="card-header font-styl p-3" style="background-color:#0F2027; margin:0;">
             <h4 class="m-0" style="color:white">My Profile</h4>
@@ -20,7 +21,8 @@ include 'transactions/form.val.php';
             <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
 
                 <div class="form-group">
-                    <img style="border:1px solid White" src="upload/<?php echo $_SESSION['profile_pic']; ?>" alt="image" width="240" height='240'>
+                    <img style="border:1px solid White" src="../upload/<?php echo $_SESSION['profile_pic']; ?>"
+                        alt="image" width="240" height='240'>
                 </div>
 
                 <hr>
@@ -99,7 +101,8 @@ include 'transactions/form.val.php';
                 <div class="row mx-md-n1">
                     <div class="form-group text-left col-md-6">
                         <label for="civilstatus">Civil Status<span style="color: red;"> *</span></label>
-                        <select class="form-control" name="civilStatus" required <?php if ($validate_civilstatus_error != 0) {echo 'style="border:2px solid red;"';}?>>
+                        <select class="form-control" name="civilStatus" required
+                            <?php if ($validate_civilstatus_error != 0) {echo 'style="border:2px solid red;"';}?>>
                             <option value="default"
                                 <?php if(isset($_POST['civilStatus']) && $_POST['civilStatus'] == 'default') {echo 'selected';}?>
                                 autofucos>Select Civil Status</option>
@@ -176,7 +179,8 @@ include 'transactions/form.val.php';
                 <div class="row mx-md-n1">
                     <div class="form-group text-left col-md-12">
                         <label for="">Choose Year Level<span style="color: red;"> *</span></label>
-                        <select id="inputState" class="form-control" name="yearlevel" required <?php if ($validate_yearlevel_error != 0) {echo 'style="border:2px solid red;"';}?>>
+                        <select id="inputState" class="form-control" name="yearlevel" required
+                            <?php if ($validate_yearlevel_error != 0) {echo 'style="border:2px solid red;"';}?>>
                             <option value="default"
                                 <?php if(isset($_POST['yearlevel']) && $_POST['yearlevel'] == 'default') {echo 'selected';}?>>
                                 Choose...</option>
@@ -195,29 +199,34 @@ include 'transactions/form.val.php';
                         </select>
                         <?php if($validate_yearlevel_error != 0){echo '<div class="alert alert-danger text-danger p-2 mt-2" style="font-size: 11px;"><i class="fas fa-exclamation-circle"></i> '.$err_array[$validate_yearlevel_error-1].'</div>';}?>
                     </div>
-                    
+
                 </div>
 
 
 
                 <div class="row mx-md-n1">
                     <div class="form-group text-left col-md-12">
-                        <label for="">Choose Course<span style="color: red;"> *</span></label> 
-                        <select id="inputState" class="form-control" name="course" required <?php if ($validate_course_error != 0) {echo 'style="border:2px solid red;"';}?>>
+                        <label for="">Choose Course<span style="color: red;"> *</span></label>
+                        <select id="inputState" class="form-control" name="course" required
+                            <?php if ($validate_course_error != 0) {echo 'style="border:2px solid red;"';}?>>
                             <option value="default"
                                 <?php if(isset($_POST['course']) && $_POST['course'] == 'default') {echo 'selected';}?>>
                                 Choose...</option>
-                            <option value="IT"
-                                <?php if(isset($_POST['course']) && $_POST['course'] == 'IT') {echo 'selected';}?>>IT
+                            <option value="B.S. in Information Technology"
+                                <?php if(isset($_POST['course']) && $_POST['course'] == 'B.S. in Information Technology') {echo 'selected';}?>>
+                                B.S. in Information Technology
                             </option>
-                            <option value="EMT"
-                                <?php if(isset($_POST['course']) && $_POST['course'] == 'EMT') {echo 'selected';}?>>EMT
+                            <option value="B.S. in Electro-Mechanical Technology"
+                                <?php if(isset($_POST['course']) && $_POST['course'] == 'B.S. in Electro-Mechanical Technology') {echo 'selected';}?>>
+                                B.S. in Electro-Mechanical Technology
                             </option>
-                            <option value="TCM"
-                                <?php if(isset($_POST['course']) && $_POST['course'] == 'TCM') {echo 'selected';}?>>TCM
+                            <option value="B.S. in Technology Communication Management"
+                                <?php if(isset($_POST['course']) && $_POST['course'] == 'B.S. in Technology Communication Management') {echo 'selected';}?>>
+                                B.S. in Technology Communication Management
                             </option>
-                            <option value="EE"
-                                <?php if(isset($_POST['course']) && $_POST['course'] == 'EE') {echo 'selected';}?>>EE
+                            <option value="B.S. in Electrical Engineering"
+                                <?php if(isset($_POST['course']) && $_POST['course'] == 'B.S. in Electrical Engineering') {echo 'selected';}?>>
+                                B.S. in Electrical Engineering
                             </option>
                         </select>
                         <?php if($validate_course_error != 0){echo '<div class="alert alert-danger text-danger p-2 mt-2" style="font-size: 11px;"><i class="fas fa-exclamation-circle"></i> '.$err_array[$validate_course_error-1].'</div>';}?>
@@ -254,7 +263,10 @@ include 'transactions/form.val.php';
 
 
                 <div class="row mx-md-n1">
-                    <div class="form-group col-md-12 mt-1">
+                    <div class="form-group col-md-4 mt-1 ">
+                        <a class="btn form-control" style="background-color:#f77042; color:white" href="upload.php">Back</a>
+                    </div>
+                    <div class="form-group col-md-4 mt-1 ml-auto">
                         <button class="btn btn-primary form-control" type="submit" name='submit'>Submit</button>
                     </div>
                 </div>

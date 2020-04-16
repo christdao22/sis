@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 <title>Login</title>
     </head>
 
@@ -11,7 +12,11 @@
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method='POST'>
                     <label style="display:block; font-size:15px;">Enter your username and password.</label>
                     
-                    <?php include 'utilities/dbconnect.util.php'; include 'utilities/dbquery.util.php'; include 'transactions/login.val.php'; ?>
+                    <?php 
+                        include 'utilities/dbconnect.util.php'; 
+                        include 'utilities/dbquery.util.php'; 
+                        include 'transactions/login.val.php'; 
+                    ?>
                     
                     <div class="form-group text-left">
                         <label for="username">Username</label>
@@ -30,7 +35,7 @@
                             style=" font-weight:bold">Login</button>
                     </div>
                     <div class="form-group" style=" text-align:center;">
-                        <a class="btn w-100" href="register.php?action=create_account"
+                        <a class="btn w-100" href="register/"
                             style="width:150px; background-color:#f77042; color:white; font-weight:bold">Create
                             Account</a>
                     </div>

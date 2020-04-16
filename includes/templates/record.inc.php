@@ -1,25 +1,59 @@
-<title>Home</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<title>Records</title>
 </head>
-<body class="jumbotron jumbotron-fluid">
-    <div class="container p-0">
-        <form action="transactions/logout.php">
-            <div class='form-group'>
-                <button class="btn logout" name="logout"
-                    style='background-color:#f77042;color:white; display: block; margin-left: auto;'>logout</button>
+
+<body>
+    <div class="container-fluid wrapper p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="records.php">Profile</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="account.php">Account</a>
+                    </li>
+
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="../transactions/logout.php">
+                    <div class='form-group'>
+                        <button class="btn logout" name="logout"
+                            style='background-color:#f77042;color:white; display: block; margin-left: auto;'>logout</button>
+                    </div>
+                </form>
             </div>
-        </form>
-        <div class="card-header font-styl p-3" style="background-color:#0F2027; margin:0; text-align:center;">
-            <h4 class="card-title m-0" style="color:white">Records</h4>
-        </div>
+        </nav>
+
+
+        <!-- ************************************************** -->
         <div class="card-body" style="background-color:white">
 
             <div class="table-responsive">
-                <form action="<?= $_SERVER['PHP_SELF']; ?>">
+                <!-- <form action="<?= $_SERVER['PHP_SELF']; ?>">
                     <div class="form-group p-3">
                         <input type="text" name="searchkey" placeholder="Enter Keyword">
                         <button class="btn btn-primary">
                             <i class="fas fa-search"></i>
                         </button>
+
+                    </div>
+                </form> -->
+
+
+                <form class="form-inline my-2 ">
+                    <div class="form-group">
+                        <input class="form-control col-md-7 mr-1" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </div>
                 </form>
 

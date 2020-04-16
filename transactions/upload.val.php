@@ -7,12 +7,18 @@ $error_image_array = array(
     ' Image should not more than 10mb to upload',
     ' Invalid Type'
 ); 
- 
+
+// change this into a variable and make it a indicator if change or register
+if (isset($_GET['userid'])){
+    $_SESSION['userid'] = $_GET['userid'];
+}
+if (isset($_POST['cancel'])){
+    header("location: ../admin/account.php?user=".$_SESSION['userid']);
+} 
 if (isset($_POST['skip'])){
     $_SESSION['profile_pic'] = 'default.png';
     header("location: form.php?user=".$_SESSION['username']);
 }
-
 if (isset($_FILES["imageToUpload"])) {
     $image = $_FILES["imageToUpload"];
     $name = $image['name'];
@@ -32,9 +38,25 @@ function validateImage($size= null, $type=null, $name=null, $tmp=null){
         return 1;
     }
     else{ 
-        upload($name, $tmp);
-        $_SESSION['profile_pic'] = $name;
-        header("location: form.php?user=".$_SESSION['username']);
+        $destination = "../upload/" . basename($name);
+        upload($name, $tmp, $destination);
+        if(isset($_SESSION['userid'])){
+            include '../utilities/dbconnect.util.php'; 
+            $destination = "../upload/" . basename($name);
+            upload($name, $tmp, $destination);
+            $userid = $_SESSION['userid'];
+            $destination = "upload/" . basename($name);
+            $sql = "UPDATE users set profilePic = '$destination' where userid = '$userid'";
+            mysqli_query($conn, $sql); 
+            header("location: ../admin/account.php?user=".$userid);
+        }
+        else{
+            $destination = "upload/" . basename($name);
+            upload($name, $tmp, $destination);
+            $_SESSION['profile_pic'] = $name;
+            header("location: form.php?user=".$_SESSION['username']);
+        }
+
     }
 }
 
